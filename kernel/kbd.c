@@ -227,10 +227,10 @@ static struct wait_queue *wq_kbd = NULL;
 /**
  * 键盘的中断处理程序
  */
-void isr_keyboard(uint32_t irq, struct context *ctx)
+void isr_keyboard(uint32_t irq, struct context *ctx) 
 {
     /*再次确认用户是否按键*/
-    if(inportb(PORT_KBD_STS) & KBD_STS_RDY) {
+    if(inportb(PORT_KBD_STS) & KBD_STS_RDY) {/*sts为状态寄存器*/
         uint8_t scan;
         uint16_t key;
 
